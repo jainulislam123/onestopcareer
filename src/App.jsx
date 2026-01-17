@@ -231,7 +231,7 @@ const ChatWidget = () => {
     } else if (lowerInput.match(/\b(whatsapp)\b/)) {
       botResponse.text = "Chat with us on WhatsApp: +91 95637 93988";
     } else if (lowerInput.match(/\b(mail|email|gmail)\b/)) {
-      botResponse.text = "Email us at: info@onestopcareer.com";
+      botResponse.text = "Email us at: jayed275@gmail.com";
     } else if (lowerInput.match(/\b(location|map|address|where)\b/)) {
       botResponse = {
         text: "We are located at 123 Career Tower, Education Hub. Click below for the map:",
@@ -959,7 +959,7 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-semibold">Visit Us</h4>
                   <p className="text-gray-400 text-sm">
-                    123 Career Tower, Education Hub, City Center, India
+                    Mirchak Mahajantola, English Bazar, Malda, 732101
                   </p>
                 </div>
               </div>
