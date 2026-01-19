@@ -27,6 +27,8 @@ import {
   Send,
   Bot,
   BookOpen,
+  Quote,
+  Building2,
 } from "lucide-react";
 
 /* --- Components --- */
@@ -941,6 +943,118 @@ const PlacementSection = () => {
   );
 };
 
+const AffiliationsSection = () => {
+  const partners = [
+    "HDFC Bank",
+    "ICICI Bank",
+    "Axis Bank",
+    "Motilal Oswal",
+    "Tech Mahindra",
+    "Wipro",
+    "TCS iON",
+    "Bajaj Finserv",
+  ];
+
+  return (
+    <section className="py-12 bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8">
+          <h3 className="text-xl font-bold text-gray-500 uppercase tracking-widest">
+            Our Placement Partners
+          </h3>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {partners.map((partner, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex items-center justify-center p-6 bg-gray-50 rounded-lg border border-gray-100 hover:shadow-md transition-shadow group"
+            >
+              <Building2 className="w-6 h-6 text-gray-400 mr-2 group-hover:text-blue-900 transition-colors" />
+              <span className="text-gray-600 font-semibold group-hover:text-blue-900 transition-colors">
+                {partner}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      name: "Priya Roy",
+      role: "Digital Marketing Executive",
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      quote:
+        "The practical training at One Stop Career was a game-changer. I landed a job within a month of completing the Digital Marketing course!",
+    },
+    {
+      name: "Rahul Sharma",
+      role: "Relationship Manager, HDFC",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      quote:
+        "Their placement support is genuine. The mock interviews helped me build confidence and crack the banking interview on my first attempt.",
+    },
+    {
+      name: "Amit Kumar",
+      role: "Freelance Web Developer",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      quote:
+        "I learnt the MERN stack from scratch here. The mentors are very supportive and the curriculum is up-to-date with industry standards.",
+    },
+  ];
+
+  return (
+    <section className="py-20 bg-blue-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          title="Success Stories"
+          subtitle="Student Testimonials"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.2 }}
+              className="bg-white p-8 rounded-2xl shadow-lg relative"
+            >
+              <Quote className="absolute top-6 right-6 text-blue-100 w-10 h-10" />
+              <p className="text-gray-600 italic mb-6 relative z-10">
+                "{t.quote}"
+              </p>
+              <div className="flex items-center">
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  className="w-12 h-12 rounded-full mr-4 border-2 border-orange-200"
+                />
+                <div>
+                  <h4 className="font-bold text-gray-900">{t.name}</h4>
+                  <p className="text-orange-500 text-xs font-semibold uppercase tracking-wide">
+                    {t.role}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-gray-900 text-white">
@@ -1097,6 +1211,8 @@ const App = () => {
       <AboutSection />
       <TrainingHighlight />
       <PlacementSection />
+      <AffiliationsSection />
+      <TestimonialsSection />
       <ContactSection />
       <Footer />
       <ChatWidget />
